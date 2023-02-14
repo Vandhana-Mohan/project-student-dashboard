@@ -1,0 +1,15 @@
+.main__container {
+  border: 2px solid blue;
+  text-align: center;
+  display:grid;
+  grid-template-columns: 200px 100px 400px;
+  grid-template-rows: 50px 300px 200px;
+}
+
+.student__container {
+  border: 2px solid red;
+}
+
+.cohort__container{
+    border:2px solid green;
+}
