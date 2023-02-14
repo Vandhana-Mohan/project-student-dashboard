@@ -9,7 +9,6 @@ import Student from "./Components/Student";
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
       <Header />
       <main>
             <h2>All Students </h2>
