@@ -1,26 +1,31 @@
 .main__container {
   display: grid;
   grid-template-rows: auto 1fr auto; /* sets the grid rows */
-  grid-template-columns: 1fr 1fr; /* sets the grid columns */
-  grid-gap: 10px; /* adds a gap between the grid items */
+  grid-template-columns: 40% 60%;   /* sets the grid columns */
+  /* grid-gap: 10px;                /* adds a gap between the grid items */
+  border:3px solid blue;
 }
 
 .header {
-  grid-row: 1; /* sets the header to the first row */
+  grid-row: 1;             /* sets the header to the first row */
   grid-column: 1 / span 2; /* spans the header across two columns */
+  border:3px solid red;
 }
 
 .cohort__container {
-  grid-row: 2; /* sets the first column to the second row */
+  grid-row: 2;     /* sets the first column to the second row */
   grid-column: 1; /* sets the first column to the first column */
+  border:3px solid purple;
 }
 
 .student__container {
-  grid-row: 2; /* sets the second column to the second row */
+  grid-row: 2;    /* sets the second column to the second row */
   grid-column: 2; /* sets the second column to the second column */
+  border:3px solid orange;
 }
 
 .footer {
-  grid-row: 3; /* sets the footer to the last row */
+  grid-row: 3;              /* sets the footer to the last row */
   grid-column: 1 / span 2; /* spans the footer across two columns */
+  border:3px solid green;
 }
