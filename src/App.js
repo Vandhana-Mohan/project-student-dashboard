@@ -7,7 +7,12 @@ import "./App.css"
 function App() {
   return (
     <div className="main__container">
-      <Header />
+      <div className="header"> 
+        <Header />
+      </div>
+      <aside className="cohort__container">
+        Column 1
+      </aside>
       <main className="student__container">
           <h2>All Students </h2>
           <h4>Total Students: {Students__data.length} </h4>
@@ -15,9 +20,9 @@ function App() {
                 return <Student student = {student}/>
               })}
       </main>
-      <aside className="cohort__container">
-        
-      </aside>
+      <div className="footer">
+        Footer
+      </div>
     </div>
   );
 }
