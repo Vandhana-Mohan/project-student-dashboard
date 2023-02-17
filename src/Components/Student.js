@@ -12,23 +12,24 @@ const format__dob = (dob) => {
   return date.toLocaleString("en-US", { month: "long" }) + " " + split__date[1] + ", " + split__date[2];
 };
 
-const Student = (student) => {
+const Student = ({ student }) => { // use destructuring to get the student object from the props
+  const { profilePhoto, names, username, dob } = student; // use destructuring to get the relevant student properties
   console.log(student)
   return (
     <div className="style__EachStudent">
       <span>
-          <img className="student__pic" src={student.student.profilePhoto} alt={student.student.names.preferredName} />
+          <img className="student__pic" src={profilePhoto} alt={names.preferredName} />
       </span>
       <main className="style__EachStudent__info">
         <h2>
-          {student.student.names.preferredName}{" "}
-          {abbreviate__middleName(student.student.names.middleName)}{" "}
-          {student.student.names.surname}{" "}
+          {names.preferredName}
+          {abbreviate__middleName(names.middleName)}
+          {names.surname}
         </h2>
-        <h5>{student.student.username}</h5>
+        <h5>{username}</h5>
         <h5 className="last__h5"> 
           <span className="style__EachStudent__dob">Birthday: </span>
-          <span>{format__dob(student.student.dob)}</span>
+          <span>{format__dob(dob)}</span>
         </h5>
         <a href="#"> Show More...</a>
       </main>

@@ -23,7 +23,7 @@ function App() {
       <main className="student__container">
           <h2>All Students </h2>
           <h4>Total Students: {totalStudents} </h4>
-              {studentList}
+              {studentList} {/* render the list of students */}
       </main>
       <div className="footer">
         Footer
