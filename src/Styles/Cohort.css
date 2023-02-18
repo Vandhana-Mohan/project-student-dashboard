@@ -19,8 +19,3 @@ button:hover{
     background-color: darkgoldenrod;
     color: whitesmoke;
 }
-
-button:not(:last-child) {
-    border-right: 1px solid black;
-  }
-  
