@@ -6,11 +6,12 @@ const abbreviate__middleName = (name) => {
 };
 
 const format__dob = (dob) => {
-  let split__date = dob.split("/");
-  const date = new Date();
-  date.setMonth(split__date[0] - 1);
-  return date.toLocaleString("en-US", { month: "long" }) + " " + split__date[1] + ", " + split__date[2];
+  const [month, day, year] = dob.split("/"); // Split the date of birth and destructure as array of month, day, and year strings.
+  const date = new Date(year, month - 1, day); // Create new Date object from the array and - 1 for zero-based indexing.
+  const formattedMonth = date.toLocaleString("default", { month: "long" }); // Get the full month name in the user's default locale using the toLocaleString method.
+  return `${formattedMonth} ${day}, ${year}`; // Return the formatted date of birth using a template literal.
 };
+
 
 const Student = ({ student }) => { // use destructuring to get the student object from the props
   const { profilePhoto, names, username, dob } = student; // use destructuring to get the relevant student properties
