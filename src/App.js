@@ -15,24 +15,28 @@ function App() {
 
   const uniqueCohorts = new Set(students.map(student => student.cohort.cohortCode));
   
-
   const orderedCohorts = [
     "All Students",
-    ...[...uniqueCohorts] // convert set to array using spread operator
+    ...[...uniqueCohorts]
       .filter(cohort => cohort !== "All Students")
       .sort((a, b) => {
+        const order = ["Winter", "Fall", "Summer", "Spring"];
         const aYear = parseInt(a.slice(-4));
         const bYear = parseInt(b.slice(-4));
+        const aSeason = a.slice(0, -5);
+        const bSeason = b.slice(0, -5);
         if (aYear === bYear) {
-          const aSeason = a.slice(0, -5);
-          const bSeason = b.slice(0, -5);
-          if (aSeason === "Winter") return -1;
-          if (aSeason === "Spring" && bSeason === "Summer") return -1;
-          if (aSeason === "Summer" && (bSeason === "Fall" || bSeason === "Winter")) return -1;
+          return order.indexOf(aSeason) - order.indexOf(bSeason);
         }
         return `${b.slice(0, -4)} ${bYear}` - `${a.slice(0, -4)} ${aYear}`;
       })
+      .sort((a, b) => {
+        if (a === "All Students") return -1;
+        if (b === "All Students") return 1;
+        return b.localeCompare(a);
+      })
   ];
+    
   console.log("orderedCohorts",orderedCohorts)
   let count = 0; // initialize count to 0
 
