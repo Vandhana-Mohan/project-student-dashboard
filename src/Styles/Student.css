@@ -4,7 +4,7 @@
   border: 2px solid rgb(106,146,113);
   display:grid;
   grid-template-columns: 20% 80%;
-  margin-right: 3%;
+  margin-right: 10%;
 }
 
 .style__EachStudent img{
@@ -58,6 +58,7 @@
   cursor: pointer;
   text-align: center;
   letter-spacing: 1px;
+  margin-bottom: 10%;
 }
 
 .show__more:hover {
