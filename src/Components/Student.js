@@ -1,5 +1,6 @@
-
+import { useState } from "react";
 import "../Styles/Student.css"
+import StudentDetails from "./StudentDetails";
 
 const abbreviate__middleName = (name) => {
   return name.charAt(0) + "."; // abbreviate middle name
@@ -16,6 +17,10 @@ const format__dob = (dob) => {
 const Student = ({ student }) => { // use destructuring to get the student object from the props
   const { profilePhoto, names, username, dob } = student; // use destructuring to get the relevant student properties
   // console.log(student)
+  const [showDetails, setShowDetails] = useState(false);
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
   return (
     <div className="style__EachStudent">
       <span>
@@ -30,7 +35,14 @@ const Student = ({ student }) => { // use destructuring to get the student objec
           <span className="style__EachStudent__dob">Birthday: </span>
           <span>{format__dob(dob)}</span>
         </h5>
-        <a href="#"> Show More...</a>
+        <button onClick={toggleDetails}> {showDetails ? "Show Less..." : "Show More..."} </button>
+        {showDetails && (
+        <StudentDetails
+          codewars={student.codewars}
+          certifications={student.certifications}
+          cohort={student.cohort}
+        />
+        )}
       </main>
     </div>
   );
