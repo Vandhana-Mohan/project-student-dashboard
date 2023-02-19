@@ -26,3 +26,13 @@
   .style__EachStudent__green{
     color: rgb(106,146,113);
   }
+
+  .fa-check {
+    color: green;
+    font-size: 21px;
+  }
+
+  .fa-times {
+    color: red;
+    font-size: 21px;
+  }

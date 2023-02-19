@@ -15,9 +15,8 @@ function App() {
   const orderedCohorts = []; // Create an empty array to hold the ordered list of cohorts
   orderedCohorts.push("All Students"); // Add "All Students" to the beginning of the list
 
-  // Loop over each cohort in the list of students
+  // Loop over each cohort in the list of students - If the cohort is not "All Students", add it to the ordered list
   for (let cohort of uniqueCohorts) {
-    // If the cohort is not "All Students", add it to the ordered list
     if (cohort !== "All Students") {
       orderedCohorts.push(cohort);
     }
@@ -68,7 +67,11 @@ function App() {
         {cohortList}
       </aside>
       <main className="student__container">
-        <h2> {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
+        <h2>
+          {" "}
+          {cohort === "All Students"
+            ? "All Students"
+            : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
         <h4>
           Total Students: {cohort === "All Students" ? totalStudents : count}{" "}

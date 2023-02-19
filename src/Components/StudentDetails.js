@@ -18,10 +18,10 @@ const StudentDetails = ({ codewars, certifications, cohort }) => {
       </div>
       <div className="certifications">
         <h3>Certifications</h3>
-        <p> <span className="style__EachStudent__green">Resume: </span>{certifications.resume ? "Yes" : "No"}</p>
-        <p> <span className="style__EachStudent__green">LinkedIn: </span>{certifications.linkedin ? "Yes" : "No"}</p>
-        <p> <span className="style__EachStudent__green">GitHub: </span>{certifications.github ? "Yes" : "No"}</p>
-        <p> <span className="style__EachStudent__green">Mock Interview: </span>{certifications.mockInterview ? "Yes" : "No"}</p>
+        <p> <span className="style__EachStudent__green">Resume: </span>{certifications.resume ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
+        <p> <span className="style__EachStudent__green">LinkedIn: </span>{certifications.linkedin ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
+        <p> <span className="style__EachStudent__green">GitHub: </span>{certifications.github ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
+        <p> <span className="style__EachStudent__green">Mock Interview: </span>{certifications.mockInterview ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
       </div>
     </div>
   );
