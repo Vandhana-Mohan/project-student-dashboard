@@ -35,7 +35,7 @@
   font-size: 16px;
 }
 
-.style__EachStudent__dob{
+.style__EachStudent__green{
   color: rgb(106,146,113);
 }
 
@@ -47,3 +47,20 @@
   margin: 10px 0 30px;
 }
 
+.show__more{
+  width: 25%;
+  margin: 10px;
+  font-size: 20px;
+  background-color: blanchedalmond;
+  padding: 13px;
+  border: 2px solid black;
+  border-radius: 5%;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.show__more:hover {
+  background-color: darkgoldenrod;
+  color: whitesmoke;
+}

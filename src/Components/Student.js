@@ -32,10 +32,10 @@ const Student = ({ student }) => { // use destructuring to get the student objec
         </h2>
         <h5>{username}</h5>
         <h5 className="last__h5"> 
-          <span className="style__EachStudent__dob">Birthday: </span>
+          <span className="style__EachStudent__green">Birthday: </span>
           <span>{format__dob(dob)}</span>
         </h5>
-        <button onClick={toggleDetails}> {showDetails ? "Show Less..." : "Show More..."} </button>
+        <button className = "show__more" onClick={toggleDetails}> {showDetails ? "Show Less..." : "Show More..."} </button>
         {showDetails && (
         <StudentDetails
           codewars={student.codewars}

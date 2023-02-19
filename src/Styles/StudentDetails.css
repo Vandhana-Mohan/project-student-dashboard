@@ -1,0 +1,29 @@
+.student-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    /* border: 2px solid red; */
+    margin-left:-40%;
+  }
+  
+  .student-details h3 {
+    margin-top: 15%;
+    margin-left:1%;
+  }
+  
+  .student-details p {
+    margin-bottom: 5%;
+    margin-top: 10%;
+  }
+  
+  .student-details .codewars {
+    grid-row: span 4;
+  }
+  
+  .student-details .certifications {
+    grid-row: span 4;
+  }
+  
+  .style__EachStudent__green{
+    color: rgb(106,146,113);
+  }
