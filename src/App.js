@@ -10,10 +10,8 @@ function App() {
   const students = [...Students__data]; // make a copy of the original data array to avoid modifying it
   const totalStudents = students.length; // get total number of students
   let count = 0;
-
-  const uniqueCohorts = new Set( // Get the unique list of cohorts and sort them in reverse order
-    students.map((student) => student.cohort.cohortCode)
-  );
+  // Get the unique list of cohorts and sort them in reverse order
+  const uniqueCohorts = new Set(students.map((student) => student.cohort.cohortCode));
   const orderedCohorts = []; // Create an empty array to hold the ordered list of cohorts
   orderedCohorts.push("All Students"); // Add "All Students" to the beginning of the list
 
@@ -37,17 +35,22 @@ function App() {
 
   const studentList = students
     .filter((student) => cohort === "All Students" || student.cohort.cohortCode === cohort) // filter students based on selected cohort
-    .map((student) => { // map over the data and create a list of students
+    .map((student) => {
+      // map over the data and create a list of students
       if (student.cohort.cohortCode === cohort) {
         count++; // increment count if the student is in the selected cohort
       }
       return <Student student={student} key={student.id} />; // specify a key for each student to identify them
-  });
+    });
+
+  function formatCohortName(cohortName) {
+    return cohortName === "All Students" ? "All Students" : `${cohortName.slice(0, -4)} ${cohortName.slice(-4)}`;
+  }
 
   const cohortList = orderedCohorts.map((cohortName) => {
     return (
       <Cohort
-        name={ cohortName === "All Students" ? "All Students" : `${cohortName.slice(0, -4)} ${cohortName.slice(-4)}` }
+        name={formatCohortName(cohortName)}
         active={cohort === cohortName}
         handleClick={() => setCohort(cohortName)}
         key={cohortName}
@@ -65,8 +68,7 @@ function App() {
         {cohortList}
       </aside>
       <main className="student__container">
-        <h2>
-          {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
+        <h2> {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
         <h4>
           Total Students: {cohort === "All Students" ? totalStudents : count}{" "}
@@ -78,5 +80,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
