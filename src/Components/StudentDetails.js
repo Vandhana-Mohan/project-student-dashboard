@@ -1,7 +1,10 @@
 
 import "../Styles/StudentDetails.css"
+import StudentNotes from "./StudentNotes";
+
 const StudentDetails = ({ codewars, certifications, cohort }) => {
   return (
+    <section>
     <div className="student-details">
       <div className="codewars">
         <h3>Codewars</h3>
@@ -24,6 +27,10 @@ const StudentDetails = ({ codewars, certifications, cohort }) => {
         <p> <span className="style__EachStudent__green">Mock Interview: </span>{certifications.mockInterview ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
       </div>
     </div>
+    <div>
+      <StudentNotes />
+    </div>
+    </section>
   );
 };
 

@@ -77,7 +77,7 @@ const Student = ({ student }) => {
           <span className="style__EachStudent__green">Birthday: </span>
           <span>{format__dob(dob)}</span>
         </h5>
-        {/* display student's email address */}
+        {/* display toggle show more button */}
         <button className="show__more" onClick={toggleDetails}>
           {" "}
           {showDetails ? "Show Less..." : "Show More..."}{" "}
