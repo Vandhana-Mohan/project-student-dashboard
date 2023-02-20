@@ -1,31 +1,34 @@
 import { useState } from "react";
+import "../Styles/StudentNotes.css"
 
-const StudentNotes = () => {
+const StudentNotes = ({ studentNotes }) => {
+  const { commenter, comment } = studentNotes
   const [commenterName, setCommenterName] = useState("");
-  const [comment, setComment] = useState("");
+  const [studentComment, setstudentComment] = useState("");
   const [notes, setNotes] = useState([]);
-
+  
+  console.log(studentNotes,commenter,comment)
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
   };
 
   const handleCommentChange = (event) => {
-    setComment(event.target.value);
+    setstudentComment(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newNote = { commenterName, comment };
+    const newNote = { commenterName, studentComment };
     setNotes([...notes, newNote]);
     setCommenterName('');
-    setComment('');
+    setstudentComment('');
   }
 
   return (
-    <aside className="Notes">
-      <h2 className="Notes__title">1-on-1 Notes</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="commenter-name"> Commenter Name :
+    <aside className="notes">
+      <h2 className="notes__title">1-on-1 Notes</h2>
+      <form onSubmit={handleSubmit} className = "notes__label">
+        <label htmlFor="commenter-name"> Commenter Name : {"  "}
           <input
             type="text"
             id="commenter-name"
@@ -37,12 +40,12 @@ const StudentNotes = () => {
           />
         </label>
         <br />
-        <label htmlFor="comment"> Comment :
+        <label htmlFor="comment"> Comment : {"  "}
           <input
             type="text"
             id="comment"
             name="comment"
-            value={comment}
+            value={studentComment}
             onChange={handleCommentChange}
             placeholder="Your Comment..."
           />

@@ -87,6 +87,7 @@ const Student = ({ student }) => {
             codewars={student.codewars}
             certifications={student.certifications}
             cohort={student.cohort}
+            notes={student.notes}
           />
         )}
       </main>

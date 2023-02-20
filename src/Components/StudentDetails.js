@@ -2,7 +2,7 @@
 import "../Styles/StudentDetails.css"
 import StudentNotes from "./StudentNotes";
 
-const StudentDetails = ({ codewars, certifications, cohort }) => {
+const StudentDetails = ({ codewars, certifications, cohort, notes }) => {
   return (
     <section>
     <div className="student-details">
@@ -28,7 +28,7 @@ const StudentDetails = ({ codewars, certifications, cohort }) => {
       </div>
     </div>
     <div>
-      <StudentNotes />
+      <StudentNotes studentNotes={notes} />
     </div>
     </section>
   );

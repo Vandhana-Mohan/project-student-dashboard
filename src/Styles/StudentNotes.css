@@ -1,0 +1,47 @@
+.notes {
+  border-top: 2px solid rgb(106, 146, 113);
+  padding-top: 6%;
+  padding-bottom: 3%;
+  margin-left: -30%;
+  margin-top: 5%;
+}
+
+.notes__title {
+  letter-spacing: 1.2px;
+  margin-bottom: 2%;
+}
+
+.notes__label {
+  margin-left: 7%;
+  letter-spacing: 1.2px;
+}
+
+.notes input[type="text"] {
+  width: 50%;
+  margin-bottom: 1%;
+  font-size: 18px;
+  margin-top: 3%;
+  padding:10px;
+  border: 2px solid black;
+}
+
+.button__addNote {
+  width: 35%;
+  margin-left: 20%;
+  font-size: 20px;
+  background-color: rgb(106, 146, 113);
+  padding: 13px;
+  border: 2px solid black;
+  border-radius: 5%;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  color: whitesmoke;
+}
+
+.button__addNote:hover {
+  background-color: darkgoldenrod;
+  color: whitesmoke;
+}
