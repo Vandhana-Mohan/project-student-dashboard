@@ -2,12 +2,13 @@ import { useState } from "react";
 import "../Styles/StudentNotes.css"
 
 const StudentNotes = ({ studentNotes } ) => {
-  console.log(StudentNotes)
-
+ 
   const [notes, setNotes] = useState(studentNotes);
   const [commenterName, setCommenterName] = useState("");
   const [studentComment, setStudentComment] = useState("");
   
+  console.log(notes,commenterName,studentComment)
+
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
   };
@@ -56,7 +57,7 @@ const StudentNotes = ({ studentNotes } ) => {
       <ul>
         {notes.map((note, index) => (
           <li key={index}>
-            <strong>{note.commenter}: {" "} says {" "}</strong> {note.comment}
+            <strong>{note.commenter} {" "} </strong> says, {" "} "{note.comment}"
           </li>
         ))}
       </ul>
