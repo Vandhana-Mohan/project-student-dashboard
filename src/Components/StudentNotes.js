@@ -1,29 +1,29 @@
 import { useState } from "react";
 import "../Styles/StudentNotes.css"
 
-const StudentNotes = ({ studentNotes }) => {
-  const { commenter, comment } = studentNotes
+const StudentNotes = ({ studentNotes } ) => {
+  console.log(StudentNotes)
+
+  const [notes, setNotes] = useState(studentNotes);
   const [commenterName, setCommenterName] = useState("");
-  const [studentComment, setstudentComment] = useState("");
-  const [notes, setNotes] = useState([]);
+  const [studentComment, setStudentComment] = useState("");
   
-  console.log(studentNotes,commenter,comment)
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
   };
 
   const handleCommentChange = (event) => {
-    setstudentComment(event.target.value);
+    setStudentComment(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newNote = { commenterName, studentComment };
+    const newNote = { commenter: commenterName, comment: studentComment };
     setNotes([...notes, newNote]);
-    setCommenterName('');
-    setstudentComment('');
-  }
-
+    setCommenterName("");
+    setStudentComment("");
+  };
+  // Combine all student notes into a single array  
   return (
     <aside className="notes">
       <h2 className="notes__title">1-on-1 Notes</h2>
@@ -40,7 +40,7 @@ const StudentNotes = ({ studentNotes }) => {
           />
         </label>
         <br />
-        <label htmlFor="comment"> Comment : {"  "}
+        <label className = "align__label" htmlFor="comment"> Comment : {"  "}
           <input
             type="text"
             id="comment"
@@ -56,7 +56,7 @@ const StudentNotes = ({ studentNotes }) => {
       <ul>
         {notes.map((note, index) => (
           <li key={index}>
-            <strong>{note.commenterName}: </strong> {note.comment}
+            <strong>{note.commenter}: {" "} says {" "}</strong> {note.comment}
           </li>
         ))}
       </ul>
