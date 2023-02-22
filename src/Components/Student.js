@@ -26,7 +26,7 @@ const isOnTrackToGraduate = (certifications, codewars) => {
   );
 };
 
-const Student = ({ student, setSelectedStudent, notes, setNotes }) => {
+const Student = ({ student }) => {
   // use destructuring to get the student object from the props
   const { profilePhoto, names, username, dob } = student; // use destructuring to get the relevant student properties
   
@@ -89,7 +89,6 @@ const Student = ({ student, setSelectedStudent, notes, setNotes }) => {
             certifications={student.certifications}
             cohort={student.cohort}
           />
-          <StudentNotes notes={notes} setNotes={setNotes} studentId={student.id} /> {/* Pass the notes and setNotes state to the StudentNotes component */}
           </div>
         )}
       </main>
