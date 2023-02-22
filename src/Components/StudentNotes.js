@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "../Styles/StudentNotes.css";
 
-const StudentNotes = (notes, setNotes, studentId ) => {
-    console.log(notes)
-  const [note, setNote] = useState('');
+const StudentNotes = ({ studentNotes }) => {
+  const [notes, setNotes] = useState(studentNotes);
   const [commenterName, setCommenterName] = useState("");
   const [studentComment, setStudentComment] = useState("");
+
+  console.log(notes)
 
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
@@ -17,10 +18,10 @@ const StudentNotes = (notes, setNotes, studentId ) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newNoteObj = { studentId, content: notes };
-    setNotes([...notes, newNoteObj]);
+    const newNote = { commenter: commenterName, comment: studentComment };
+    setNotes([...notes, newNote]);
     setCommenterName("");
-    setStudentComment("")
+    setStudentComment("");
   };
   // Combine all student notes into a single array
   return (

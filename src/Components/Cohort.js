@@ -1,4 +1,4 @@
-    import "../Styles/Cohort.css";
+import "../Styles/Cohort.css";
 
     const Cohort = ({ name, active, handleClick }) => {
         return (

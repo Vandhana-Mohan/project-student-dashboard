@@ -6,8 +6,6 @@ import Cohort from "./Components/Cohort";
 import "./App.css";
 
 function App() {
-  const [selectedStudent, setSelectedStudent] = useState(null);
-  const [notes, setNotes] = useState([]);
   const [cohort, setCohort] = useState("All Students"); // Set up state for the selected cohort
   const students = [...Students__data]; // make a copy of the original data array to avoid modifying it
   const totalStudents = students.length; // get total number of students
@@ -42,15 +40,7 @@ function App() {
       if (student.cohort.cohortCode === cohort) {
         count++; // increment count if the student is in the selected cohort
       }
-      return (
-            <Student 
-              student={student}
-              key={student.id}
-              setSelectedStudent={setSelectedStudent}
-              notes={notes.filter((note) => note.studentId === student.id)}
-              setNotes={setNotes}
-              /> // specify a key for each student to identify them
-      );
+      return <Student student={student} key={student.id} />; // specify a key for each student to identify them
     });
 
   function formatCohortName(cohortName) {
