@@ -6,6 +6,8 @@ const StudentNotes = ({ studentNotes }) => {
   const [commenterName, setCommenterName] = useState("");
   const [studentComment, setStudentComment] = useState("");
 
+  console.log(notes)
+
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
   };
