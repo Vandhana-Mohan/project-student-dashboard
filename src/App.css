@@ -3,7 +3,7 @@
   grid-template-rows: auto 1fr auto; /* sets the grid rows */
   grid-template-columns: 30% 70%; /* sets the grid columns */
   /* grid-gap: 10px;                /* adds a gap between the grid items */
-  border: 3px solid blue;
+  border: 3px solid rgb(200, 255, 0);
 }
 
 .header {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../Styles/Student.css";
 import StudentDetails from "./StudentDetails";
-
+import StudentNotes from "./StudentNotes";
 // function to abbreviate middle name
 const abbreviate__middleName = (name) => {
   return name.charAt(0) + "."; 
@@ -26,7 +26,7 @@ const isOnTrackToGraduate = (certifications, codewars) => {
   );
 };
 
-const Student = ({ student }) => {
+const Student = ({ student, setSelectedStudent, notes, setNotes }) => {
   // use destructuring to get the student object from the props
   const { profilePhoto, names, username, dob } = student; // use destructuring to get the relevant student properties
   
@@ -83,12 +83,14 @@ const Student = ({ student }) => {
           {showDetails ? "Show Less..." : "Show More..."}{" "}
         </button>
         {showDetails && (
+          <div>
           <StudentDetails
             codewars={student.codewars}
             certifications={student.certifications}
             cohort={student.cohort}
-            notes={student.notes}
           />
+          <StudentNotes notes={notes} setNotes={setNotes} studentId={student.id} /> {/* Pass the notes and setNotes state to the StudentNotes component */}
+          </div>
         )}
       </main>
     </div>
