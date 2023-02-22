@@ -7,10 +7,22 @@ import "./App.css";
 
 function App() {
   const [cohort, setCohort] = useState("All Students"); // Set up state for the selected cohort
+  const [showDetails, setShowDetails] = useState(false); // state to toggle the display of the student details
+  const [notes, setNotes] = useState([]); // state to hold the notes for a student
+  const [commenterName, setCommenterName] = useState(""); // state to hold the name of the commenter
+  const [studentComment, setStudentComment] = useState(""); // state to hold the comment for a student
+
   const students = [...Students__data]; // make a copy of the original data array to avoid modifying it
   const totalStudents = students.length; // get total number of students
   
   let count = 0;
+
+  // function to toggle the display of the student details
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
+  
   // Get the unique list of cohorts and sort them in reverse order
   const uniqueCohorts = new Set(students.map((student) => student.cohort.cohortCode));
   const orderedCohorts = []; // Create an empty array to hold the ordered list of cohorts
