@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import "../Styles/Student.css";
 
 // function to abbreviate middle name
@@ -25,10 +26,11 @@ const isOnTrackToGraduate = (certifications, codewars) => {
   );
 };
 
-const Student = ({ student, showDetails, toggleDetails, notes, setNotes, commenterName, setCommenterName, studentComment, setStudentComment }) => {
+const Student = ({ student, notes, setNotes, commenterName, setCommenterName, studentComment, setStudentComment }) => {
   // use destructuring to get the student object from the props
   const { profilePhoto, names, username, dob, cohort, codewars, certifications } = student; // use destructuring to get the relevant student properties
-  
+  const [showDetails, setShowDetails] = useState(false); // state to toggle the display of the student details
+
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
   };
@@ -45,6 +47,11 @@ const Student = ({ student, showDetails, toggleDetails, notes, setNotes, comment
     setStudentComment("");
   };
 
+  // function to toggle the display of the student details
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   // check if the student is on track to graduate
   const onTrackToGraduate = isOnTrackToGraduate(certifications, codewars);
 
@@ -53,7 +60,7 @@ const Student = ({ student, showDetails, toggleDetails, notes, setNotes, comment
       <span>
         <img
           className="student__pic"
-          src={profilePhoto}
+          // src={profilePhoto}
           alt={names.preferredName}
         />
       </span>
