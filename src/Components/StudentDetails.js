@@ -11,7 +11,7 @@ const StudentDetails = ({ codewars, certifications, cohort, notes }) => {
         <p> <span className="style__EachStudent__green">Current Total: </span> {codewars.current.total}</p>
         <p> <span className="style__EachStudent__green"> Last Week: </span> {codewars.current.lastWeek}</p>
         <p> <span className="style__EachStudent__green">Goal: </span> {codewars.goal.total}</p>
-        <p> <span className="style__EachStudent__green">Percent of Goal Achieved: </span> {(codewars.current.total / codewars.goal.total * 100).toFixed(0)}%</p>
+        <p> <span className="style__EachStudent__green">Goal Achieved Percent: </span> {(codewars.current.total / codewars.goal.total * 100).toFixed(0)}%</p>
       </div>
       <div className="scores">
         <h3>Scores</h3>

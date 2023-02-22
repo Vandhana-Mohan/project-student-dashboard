@@ -1,13 +1,10 @@
 import { useState } from "react";
-import "../Styles/StudentNotes.css"
+import "../Styles/StudentNotes.css";
 
-const StudentNotes = ({ studentNotes } ) => {
- 
+const StudentNotes = ({ studentNotes }) => {
   const [notes, setNotes] = useState(studentNotes);
   const [commenterName, setCommenterName] = useState("");
   const [studentComment, setStudentComment] = useState("");
-  
-  console.log(notes,commenterName,studentComment)
 
   const handleNameChange = (event) => {
     setCommenterName(event.target.value);
@@ -24,12 +21,14 @@ const StudentNotes = ({ studentNotes } ) => {
     setCommenterName("");
     setStudentComment("");
   };
-  // Combine all student notes into a single array  
+  // Combine all student notes into a single array
   return (
     <aside className="notes">
       <h2 className="notes__title">1-on-1 Notes</h2>
-      <form onSubmit={handleSubmit} className = "notes__label">
-        <label htmlFor="commenter-name"> Commenter Name : {"  "}
+      <form onSubmit={handleSubmit} className="notes__form">
+        <label htmlFor="commenter-name">
+          {" "}
+          Commenter Name : {"  "}
           <input
             type="text"
             id="commenter-name"
@@ -41,7 +40,9 @@ const StudentNotes = ({ studentNotes } ) => {
           />
         </label>
         <br />
-        <label className = "align__label" htmlFor="comment"> Comment : {"  "}
+        <label className="align__label" htmlFor="comment">
+          {" "}
+          Comment : {"  "}
           <input
             type="text"
             id="comment"
@@ -57,7 +58,7 @@ const StudentNotes = ({ studentNotes } ) => {
       <ul>
         {notes.map((note, index) => (
           <li key={index}>
-            <strong>{note.commenter} {" "} </strong> says, {" "} "{note.comment}"
+            <strong>{note.commenter} </strong> says, "{note.comment}"
           </li>
         ))}
       </ul>

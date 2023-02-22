@@ -9,6 +9,7 @@ function App() {
   const [cohort, setCohort] = useState("All Students"); // Set up state for the selected cohort
   const students = [...Students__data]; // make a copy of the original data array to avoid modifying it
   const totalStudents = students.length; // get total number of students
+  
   let count = 0;
   // Get the unique list of cohorts and sort them in reverse order
   const uniqueCohorts = new Set(students.map((student) => student.cohort.cohortCode));
@@ -56,7 +57,7 @@ function App() {
       />
     );
   });
-
+  
   return (
     <div className="main__container">
       <div className="header">
@@ -69,14 +70,11 @@ function App() {
       <main className="student__container">
         <h2>
           {" "}
-          {cohort === "All Students"
-            ? "All Students"
-            : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
+          {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
         <h4>
-          Total Students: {cohort === "All Students" ? totalStudents : count}{" "}
+          Total Students: {cohort === "All Students" ? totalStudents : count} {" "} {/* display count if a cohort is selected, otherwise display totalStudents */}
         </h4>{" "}
-        {/* display count if a cohort is selected, otherwise display totalStudents */}
         {studentList} {/* render the list of students */}
       </main>
       <div className="footer">Footer</div>
