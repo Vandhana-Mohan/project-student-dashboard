@@ -31,14 +31,14 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
   const [showDetails, setShowDetails] = useState(false); // state to toggle the display of the student details
 
   const handleNameChange = (event) => {
-    setCommenterName(event.target.value);
+    setCommenterName(event.target.value); // callback function to update commenterName state when the user enters a value in the commenter input
   };
 
   const handleCommentChange = (event) => {
-    setStudentComment(event.target.value);
+    setStudentComment(event.target.value); // callback function to update studentComment state when the user enters a value in the comment input
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event) => { // callback function to handle form submission when the user submits a comment
     event.preventDefault();
     const newNote = { commenter: commenterName, comment: studentComment };
     setNotes([...notes, newNote]);
