@@ -25,25 +25,9 @@ const isOnTrackToGraduate = (certifications, codewars) => {
   );
 };
 
-const Student = ({
-  student,
-  notes,
-  setNotes,
-  commenterName,
-  setCommenterName,
-  studentComment,
-  setStudentComment,
-}) => {
+const Student = ({ student, notes, setNotes, commenterName, setCommenterName, studentComment, setStudentComment }) => {
   // use destructuring to get the student object from the props
-  const {
-    profilePhoto,
-    names,
-    username,
-    dob,
-    cohort,
-    codewars,
-    certifications,
-  } = student; // use destructuring to get the relevant student properties
+  const { profilePhoto, names, username, dob, cohort, codewars, certifications } = student; // use destructuring to get the relevant student properties
   const [showDetails, setShowDetails] = useState(false); // state to toggle the display of the student details
 
   const handleNameChange = (event) => {
@@ -86,10 +70,9 @@ const Student = ({
       </span>
       <main className="style__EachStudent__info">
         {/* display student's name */}
-        <h2>
+        <h2 className="style__fullname">
           <span className="style__EachStudent__green">Full Name: </span>
-          {names.preferredName} {abbreviate__middleName(names.middleName)}{" "}
-          {names.surname}
+          {names.preferredName} {abbreviate__middleName(names.middleName)}{" "} {names.surname}
         </h2>
         {/* display student's graduation status */}
         <aside className="student__status">
@@ -120,10 +103,10 @@ const Student = ({
           <div className="student-details">
             <div className="student-grades">
               <div className="codewars">
-                <h3>Codewars</h3>
+                <h3 className="style__code">Codewars</h3>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     {" "}
                     Current Total:{" "}
                   </span>{" "}
@@ -131,7 +114,7 @@ const Student = ({
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     {" "}
                     Last Week:{" "}
                   </span>{" "}
@@ -139,12 +122,12 @@ const Student = ({
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">Goal: </span>{" "}
+                  <span className="style__EachStudent__purple">Goal: </span>{" "}
                   {codewars.goal.total}{" "}
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     Goal Achieved Percent:{" "}
                   </span>{" "}
                   <span
@@ -161,34 +144,34 @@ const Student = ({
                 </p>
               </div>
               <div className="scores">
-                <h3>Scores</h3>
+                <h3 className="style__code">Scores</h3>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     Assignments:{" "}
                   </span>{" "}
                   {cohort.scores.assignments * 100}%{" "}
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     Projects:{" "}
                   </span>{" "}
                   {cohort.scores.projects * 100}%{" "}
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     Assessments:{" "}
                   </span>{" "}
                   {cohort.scores.assessments * 100}%{" "}
                 </p>
               </div>
               <div className="certifications">
-                <h3>Certifications</h3>
+                <h3 className="style__code">Certifications</h3>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     Resume:{" "}
                   </span>{" "}
                   {certifications.resume ? (
@@ -199,7 +182,7 @@ const Student = ({
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     LinkedIn:{" "}
                   </span>{" "}
                   {certifications.linkedin ? (
@@ -210,7 +193,7 @@ const Student = ({
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     GitHub:{" "}
                   </span>{" "}
                   {certifications.github ? (
@@ -221,7 +204,7 @@ const Student = ({
                 </p>
                 <p>
                   {" "}
-                  <span className="style__EachStudent__green">
+                  <span className="style__EachStudent__purple">
                     {" "}
                     Mock Interview:{" "}
                   </span>{" "}

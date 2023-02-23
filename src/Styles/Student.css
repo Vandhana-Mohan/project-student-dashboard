@@ -29,7 +29,7 @@
   font-weight: bold;
 }
 
-.style__EachStudent__info h2 {
+.style__fullname{
   font-weight: bold;
   font-size: 24px;
   margin: 0 0 23px;
@@ -41,7 +41,13 @@
   margin: 0;
 }
 
-.style__EachStudent__green {
+.style__EachStudent__purple{
+  color: #0000ff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.style__EachStudent__green{
   color: #0000ff;
 }
 
@@ -63,7 +69,7 @@
   cursor: pointer;
   text-align: center;
   letter-spacing: 1px;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   background-color: #ccccff;
   border: 2px solid #6666ff;
 }
@@ -96,8 +102,8 @@
 
 .student-details {
   display: grid;
-  margin-left: -30%;
-  margin-top: -3%;
+  margin-left: -37%;
+  margin-top: 0%;
 }
 
 .student-grades h3 {
@@ -107,7 +113,8 @@
 
 .student-grades p {
   margin-bottom: 10%;
-  margin-top: 10%;
+  margin-top: -6%;
+  font-size: larger;
 }
 
 .student-grades {
@@ -156,7 +163,7 @@
 .notes__form {
   margin-left: 7%;
   letter-spacing: 1.2px;
-  margin-top: -8%;
+  margin-top: -10%;
 }
 
 .notes input[type="text"] {
@@ -170,7 +177,7 @@
 
 .button__addNote {
   width: 35%;
-  margin-left: 20%;
+  margin-left: 25%;
   font-size: 20px;
   padding: 13px;
   border-radius: 5%;
@@ -178,8 +185,8 @@
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 5%;
-  margin-top: 5%;
-  color: whitesmoke;
+  margin-top: 3%;
+  color: black;
   background-color: #ccccff;
   border: 2px solid #6666ff;
 }
@@ -200,7 +207,8 @@
 }
 
 .notes__list li {
-  margin-bottom: 11px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .green {
@@ -213,4 +221,9 @@
 
 .red {
   color: #b20000;
+}
+
+.style__code{
+  font-size: 26px;
+  font-weight: bold;
 }

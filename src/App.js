@@ -94,11 +94,11 @@ function App() {
         {cohortList}
       </aside>
       <main className="student__container">
-        <h2>
+        <h2 className="style__allStudents">
           {" "}
           {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
-        <h4>
+        <h4 className="style__totalStudents">
           Total Students: {" "} {cohort === "All Students" ? totalStudents : count} {" "} {/* display count if a cohort is selected, otherwise display totalStudents */}
         </h4>{" "}
         {studentList} {/* render the list of students */}
