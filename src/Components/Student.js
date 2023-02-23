@@ -230,6 +230,7 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
                     placeholder="Your Name..."
                     value={commenterName}
                     onChange={handleNameChange}
+                    required
                   />
                 </label>
                 <br />
@@ -243,6 +244,7 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
                     value={studentComment}
                     onChange={handleCommentChange}
                     placeholder="Your Comment..."
+                    required
                   />
                 </label>
                 <br />
