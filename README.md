@@ -1,6 +1,6 @@
 # React Mid-Module Project
 
-# ![Click here to view Student Dashboard](https://the-student-dashboard.netlify.app/)
+# [Click here to view Student Dashboard](https://the-student-dashboard.netlify.app/)
 
 
 ### ![Student Dashboard wireFrame](./instruction-assets/Wireframe.png)
