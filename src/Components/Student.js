@@ -54,6 +54,13 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
   // check if the student is on track to graduate
   const onTrackToGraduate = isOnTrackToGraduate(certifications, codewars);
 
+  function getColorCodedPercentage(percent) {
+    const color =
+      percent >= 100 ? 'green' : percent >= 50 ? 'yellow' : 'red';
+      return `<span style="color: ${color}">${percent.toFixed(0)}%</span>`;
+  }
+  
+
   return (
     <div className="style__EachStudent">
       <span>
@@ -103,7 +110,7 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
                 <p> {" "} <span className="style__EachStudent__green"> Current Total:{" "} </span>{" "} {codewars.current.total} </p>
                 <p> {" "} <span className="style__EachStudent__green"> {" "} Last Week:{" "} </span>{" "} {codewars.current.lastWeek} </p>
                 <p> {" "} <span className="style__EachStudent__green">Goal: </span>{" "} {codewars.goal.total} </p>
-                <p> {" "} <span className="style__EachStudent__green"> Goal Achieved Percent:{" "} </span>{" "} {((codewars.current.total / codewars.goal.total) * 100).toFixed(0)}% </p>
+                <p> {" "} <span>Goal Achieved Percent: {" "} </span>{" "} {getColorCodedPercentage((codewars.current.total / codewars.goal.total) * 100)} </p>
               </div>
               <div className="scores">
                 <h3>Scores</h3>
