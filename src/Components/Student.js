@@ -25,9 +25,25 @@ const isOnTrackToGraduate = (certifications, codewars) => {
   );
 };
 
-const Student = ({ student, notes, setNotes, commenterName, setCommenterName, studentComment, setStudentComment }) => {
+const Student = ({
+  student,
+  notes,
+  setNotes,
+  commenterName,
+  setCommenterName,
+  studentComment,
+  setStudentComment,
+}) => {
   // use destructuring to get the student object from the props
-  const { profilePhoto, names, username, dob, cohort, codewars, certifications } = student; // use destructuring to get the relevant student properties
+  const {
+    profilePhoto,
+    names,
+    username,
+    dob,
+    cohort,
+    codewars,
+    certifications,
+  } = student; // use destructuring to get the relevant student properties
   const [showDetails, setShowDetails] = useState(false); // state to toggle the display of the student details
 
   const handleNameChange = (event) => {
@@ -38,7 +54,8 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
     setStudentComment(event.target.value); // callback function to update studentComment state when the user enters a value in the comment input
   };
 
-  const handleSubmit = (event) => { // callback function to handle form submission when the user submits a comment
+  const handleSubmit = (event) => {
+    // callback function to handle form submission when the user submits a comment
     event.preventDefault();
     const newNote = { commenter: commenterName, comment: studentComment };
     setNotes([...notes, newNote]);
@@ -55,11 +72,8 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
   const onTrackToGraduate = isOnTrackToGraduate(certifications, codewars);
 
   function getColorCodedPercentage(percent) {
-    const color =
-      percent >= 100 ? 'green' : percent >= 50 ? 'yellow' : 'red';
-      return `<span style="color: ${color}">${percent.toFixed(0)}%</span>`;
+    return percent >= 100 ? "green" : percent >= 50 ? "yellow" : "red";
   }
-  
 
   return (
     <div className="style__EachStudent">
@@ -107,29 +121,124 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
             <div className="student-grades">
               <div className="codewars">
                 <h3>Codewars</h3>
-                <p> {" "} <span className="style__EachStudent__green"> Current Total:{" "} </span>{" "} {codewars.current.total} </p>
-                <p> {" "} <span className="style__EachStudent__green"> {" "} Last Week:{" "} </span>{" "} {codewars.current.lastWeek} </p>
-                <p> {" "} <span className="style__EachStudent__green">Goal: </span>{" "} {codewars.goal.total} </p>
-                <p> {" "} <span>Goal Achieved Percent: {" "} </span>{" "} {getColorCodedPercentage((codewars.current.total / codewars.goal.total) * 100)} </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    {" "}
+                    Current Total:{" "}
+                  </span>{" "}
+                  {codewars.current.total}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    {" "}
+                    Last Week:{" "}
+                  </span>{" "}
+                  {codewars.current.lastWeek}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">Goal: </span>{" "}
+                  {codewars.goal.total}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    Goal Achieved Percent:{" "}
+                  </span>{" "}
+                  <span
+                    className={getColorCodedPercentage(
+                      (codewars.current.total / codewars.goal.total) * 100
+                    )}
+                  >
+                    {(
+                      (codewars.current.total / codewars.goal.total) *
+                      100
+                    ).toFixed(0)}
+                    %
+                  </span>{" "}
+                </p>
               </div>
               <div className="scores">
                 <h3>Scores</h3>
-                <p> {" "} <span className="style__EachStudent__green">Assignments: </span> {cohort.scores.assignments * 100}% </p>
-                <p> {" "} <span className="style__EachStudent__green">Projects: </span> {cohort.scores.projects * 100}% </p>
-                <p> {" "} <span className="style__EachStudent__green">Assessments: </span> {cohort.scores.assessments * 100}% </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    Assignments:{" "}
+                  </span>{" "}
+                  {cohort.scores.assignments * 100}%{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    Projects:{" "}
+                  </span>{" "}
+                  {cohort.scores.projects * 100}%{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    Assessments:{" "}
+                  </span>{" "}
+                  {cohort.scores.assessments * 100}%{" "}
+                </p>
               </div>
               <div className="certifications">
                 <h3>Certifications</h3>
-                <p> {" "} <span className="style__EachStudent__green">Resume: </span> {certifications.resume ? ( <i className="fas fa-check"></i>) : ( <i className="fas fa-times"></i> )} </p>
-                <p> {" "} <span className="style__EachStudent__green">LinkedIn: </span> {certifications.linkedin ? ( <i className="fas fa-check"></i>) : ( <i className="fas fa-times"></i> )} </p>
-                <p> {" "} <span className="style__EachStudent__green">GitHub: </span> {certifications.github ? ( <i className="fas fa-check"></i> ) : ( <i className="fas fa-times"></i> )} </p>
-                <p> {" "} <span className="style__EachStudent__green"> Mock Interview:{" "} </span> {certifications.mockInterview ? (<i className="fas fa-check"></i> ) : ( <i className="fas fa-times"></i> )} </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    Resume:{" "}
+                  </span>{" "}
+                  {certifications.resume ? (
+                    <i className="fas fa-check"></i>
+                  ) : (
+                    <i className="fas fa-times"></i>
+                  )}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    LinkedIn:{" "}
+                  </span>{" "}
+                  {certifications.linkedin ? (
+                    <i className="fas fa-check"></i>
+                  ) : (
+                    <i className="fas fa-times"></i>
+                  )}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    GitHub:{" "}
+                  </span>{" "}
+                  {certifications.github ? (
+                    <i className="fas fa-check"></i>
+                  ) : (
+                    <i className="fas fa-times"></i>
+                  )}{" "}
+                </p>
+                <p>
+                  {" "}
+                  <span className="style__EachStudent__green">
+                    {" "}
+                    Mock Interview:{" "}
+                  </span>{" "}
+                  {certifications.mockInterview ? (
+                    <i className="fas fa-check"></i>
+                  ) : (
+                    <i className="fas fa-times"></i>
+                  )}{" "}
+                </p>
               </div>
             </div>
             <aside className="notes">
               <h2 className="notes__title">1-on-1 Notes</h2>
               <form onSubmit={handleSubmit} className="notes__form">
-                <label htmlFor="commenter-name"> {" "} Commenter Name : {"  "}
+                <label htmlFor="commenter-name">
+                  {" "}
+                  Commenter Name : {"  "}
                   <input
                     type="text"
                     id="commenter-name"
@@ -141,7 +250,9 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
                   />
                 </label>
                 <br />
-                <label className="align__label" htmlFor="comment"> {" "} Comment : {"  "}
+                <label className="align__label" htmlFor="comment">
+                  {" "}
+                  Comment : {"  "}
                   <input
                     type="text"
                     id="comment"

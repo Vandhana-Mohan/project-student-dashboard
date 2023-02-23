@@ -1,15 +1,15 @@
 
 .style__header{
-    background-color: rgb(56,126,126);
+    background-color: #7f7fff;
     padding:0.5%;
 }
 
 .header__title{
-    font-size: 40px;
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
-    color: rgb(255,255,255);
+    color: whitesmoke;
     letter-spacing: 1.3px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Questrial', sans-serif;
 }
 

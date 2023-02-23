@@ -16,13 +16,11 @@
   align-self: start;
   position: sticky; /* sets the side menu while navigating the students it always appears */
   top: 7px;
-  background-color: rgb(244,255,241);
 }
 
 .student__container {
   grid-row: 2; /* sets the second column to the second row */
   grid-column: 2; /* sets the second column to the second column */
-  background-color: rgb(244,255,241);
 }
 
 .footer {
@@ -33,4 +31,8 @@
 .cohort__title{
   margin-bottom: 15px;
   margin-left:15px;
+}
+
+*{
+  font-family: 'Questrial', sans-serif;
 }

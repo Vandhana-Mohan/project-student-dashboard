@@ -1,9 +1,10 @@
 .style__EachStudent {
   margin: 10px;
-  border: 2px solid rgb(117, 251, 76);
+  border: 2px solid #4c4cff;
   display: grid;
   grid-template-columns: 20% 70% 10%;
   margin-right: 10%;
+  background-color: #e5e5ff;
 }
 
 .style__EachStudent img {
@@ -38,7 +39,7 @@
 }
 
 .style__EachStudent__green {
-  color: rgb(106, 146, 113);
+  color: #0000ff;
 }
 
 .style__EachStudent__info h2,
@@ -54,18 +55,18 @@
   width: 35%;
   margin: 10px;
   font-size: 20px;
-  background-color: blanchedalmond;
   padding: 13px;
-  border: 2px solid black;
   border-radius: 5%;
   cursor: pointer;
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 10%;
+  background-color: #ccccff;
+  border: 2px solid #6666ff;
 }
 
 .show__more:hover {
-  background-color: darkgoldenrod;
+  background-color: #9999ff;
   color: whitesmoke;
 }
 
@@ -109,7 +110,6 @@
 .student-grades {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 2px solid green;
 }
 
 .student-grades .codewars {
@@ -126,10 +126,6 @@
   margin-left: 50px;
 }
 
-.style__EachStudent__green {
-  color: rgb(106, 146, 113);
-}
-
 .fa-check {
   color: green;
   font-size: 21px;
@@ -141,7 +137,7 @@
 }
 
 .notes {
-  border-top: 2px solid rgb(106, 146, 113);
+  border-top: 2px solid #4c4cff;
   padding-top: 2%;
   padding-bottom: 0%;
   margin-left: 0%;
@@ -173,9 +169,7 @@
   width: 35%;
   margin-left: 20%;
   font-size: 20px;
-  background-color: rgb(106, 146, 113);
   padding: 13px;
-  border: 2px solid black;
   border-radius: 5%;
   cursor: pointer;
   text-align: center;
@@ -183,10 +177,12 @@
   margin-bottom: 5%;
   margin-top: 5%;
   color: whitesmoke;
+  background-color: #ccccff;
+  border: 2px solid #6666ff;
 }
 
 .button__addNote:hover {
-  background-color: darkgoldenrod;
+  background-color: #9999ff;
   color: whitesmoke;
 }
 
@@ -202,4 +198,16 @@
 
 .notes__list li {
   margin-bottom: 11px;
+}
+
+.green {
+  color: #11823b;
+}
+
+.yellow {
+  color: #f1c232;
+}
+
+.red {
+  color: #b20000;
 }

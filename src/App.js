@@ -48,23 +48,22 @@ function App() {
       return (
         // Return a Student component for each student
         <Student
-          student={student}
-          key={student.id}
+          student={student} // Pass in the student object as a prop
+          key={student.id}  // Set the key for each student to their unique ID
           notes={studentNotes} // pass the notes for the student
-          setNotes={(newNotes) => {
-            // update the notes for the student in the data array
-            const index = students.findIndex((s) => s.id === student.id);
-            const updatedStudent = {
+          setNotes={(newNotes) => { // Set a function to update the notes for the student
+            const index = students.findIndex((s) => s.id === student.id); // Find the index of the student in the students array
+            const updatedStudent = { // Create a new object with the updated notes for the student
               ...student,
               notes: newNotes,
             };
-            Students__data[index] = updatedStudent;
+            Students__data[index] = updatedStudent; // Update the students array with the new student object
           }}
-          commenterName={commenterName}
-          setCommenterName={setCommenterName}
-          studentComment={studentComment}
-          setStudentComment={setStudentComment}
-       /> // specify a key for each student to identify them
+          commenterName={commenterName}  // Pass in the name of the commenter as a prop
+          setCommenterName={setCommenterName} // Set a function to update the commenter name
+          studentComment={studentComment} // Pass in the comment for the student as a prop
+          setStudentComment={setStudentComment} // Set a function to update the comment for the student
+       /> 
       )
     });
 
