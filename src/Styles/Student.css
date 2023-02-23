@@ -1,10 +1,13 @@
+
 .style__EachStudent {
-  margin: 10px;
+  margin: 2%;
   border: 2px solid #4c4cff;
   display: grid;
   grid-template-columns: 20% 70% 10%;
   margin-right: 10%;
   background-color: #e5e5ff;
+  margin-top:1%;
+  margin-left:1%;
 }
 
 .style__EachStudent img {

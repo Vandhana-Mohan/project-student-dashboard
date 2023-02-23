@@ -99,7 +99,7 @@ function App() {
           {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
         <h4>
-          Total Students: {cohort === "All Students" ? totalStudents : count} {" "} {/* display count if a cohort is selected, otherwise display totalStudents */}
+          Total Students: {" "} {cohort === "All Students" ? totalStudents : count} {" "} {/* display count if a cohort is selected, otherwise display totalStudents */}
         </h4>{" "}
         {studentList} {/* render the list of students */}
       </main>
