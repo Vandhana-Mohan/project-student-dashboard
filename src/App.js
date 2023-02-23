@@ -46,6 +46,7 @@ function App() {
       }
       const studentNotes = student.notes || []; // get the notes for the student
       return (
+        // Return a Student component for each student
         <Student
           student={student}
           key={student.id}
@@ -68,16 +69,18 @@ function App() {
     });
 
   function formatCohortName(cohortName) {
+    // Format the cohort name to remove the year from the end, unless the cohort is "All Students"
     return cohortName === "All Students" ? "All Students" : `${cohortName.slice(0, -4)} ${cohortName.slice(-4)}`;
   }
 
   const cohortList = orderedCohorts.map((cohortName) => {
+    // Create a list of Cohort components based on the ordered cohorts
     return (
       <Cohort
         name={formatCohortName(cohortName)}
-        active={cohort === cohortName}
-        handleClick={() => setCohort(cohortName)}
-        key={cohortName}
+        active={cohort === cohortName} // Set whether the cohort is active or not
+        handleClick={() => setCohort(cohortName)} // Call the setCohort function when the cohort is clicked
+        key={cohortName} // Specify a key for each cohort to identify it
       />
     );
   });
