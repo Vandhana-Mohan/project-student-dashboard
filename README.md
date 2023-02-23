@@ -1,6 +1,9 @@
 # React Mid-Module Project
 
-![Landing page.](https://the-student-dashboard.netlify.app/)
+# ![Click here to view Student Dashboard](https://the-student-dashboard.netlify.app/)
+
+
+### ![Student Dashboard wireFrame](./instruction-assets/Wireframe.png)
 
 For this assignment, you will build a student dashboard that will make use of some randomized data. The dashboard should show easy to understand data, formatted in a way that is easy for a user to use.
 
