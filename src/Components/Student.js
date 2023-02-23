@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import "../Styles/Student.css";
 
 // function to abbreviate middle name
 const abbreviate__middleName = (name) => {
-  return name.charAt(0) + "."; 
+  return name.charAt(0) + ".";
 };
 
 // function to format date of birth
@@ -60,7 +59,7 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
       <span>
         <img
           className="student__pic"
-          // src={profilePhoto}
+          src={profilePhoto}
           alt={names.preferredName}
         />
       </span>
@@ -68,7 +67,8 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
         {/* display student's name */}
         <h2>
           <span className="style__EachStudent__green">Full Name: </span>
-          {names.preferredName} {abbreviate__middleName(names.middleName)}{" "} {names.surname}
+          {names.preferredName} {abbreviate__middleName(names.middleName)}{" "}
+          {names.surname}
         </h2>
         {/* display student's graduation status */}
         <aside className="student__status">
@@ -92,72 +92,149 @@ const Student = ({ student, notes, setNotes, commenterName, setCommenterName, st
         </h5>
         {/* display toggle show more button */}
         <button className="show__more" onClick={toggleDetails}>
-          {" "}{showDetails ? "Show Less..." : "Show More..."}{" "}
+          {" "}
+          {showDetails ? "Show Less..." : "Show More..."}{" "}
         </button>
         {showDetails && (
           <div className="student-details">
-          <div className="codewars">
-            <h3>Codewars</h3>
-            <p> <span className="style__EachStudent__green">Current Total: </span> {codewars.current.total}</p>
-            <p> <span className="style__EachStudent__green"> Last Week: </span> {codewars.current.lastWeek}</p>
-            <p> <span className="style__EachStudent__green">Goal: </span> {codewars.goal.total}</p>
-            <p> <span className="style__EachStudent__green">Goal Achieved Percent: </span> {(codewars.current.total / codewars.goal.total * 100).toFixed(0)}%</p>
+            <div className="codewars">
+              <h3>Codewars</h3>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">
+                  Current Total:{" "}
+                </span>{" "}
+                {codewars.current.total}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">
+                  {" "}
+                  Last Week:{" "}
+                </span>{" "}
+                {codewars.current.lastWeek}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">Goal: </span>{" "}
+                {codewars.goal.total}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">
+                  Goal Achieved Percent:{" "}
+                </span>{" "}
+                {((codewars.current.total / codewars.goal.total) * 100).toFixed(
+                  0
+                )}
+                %
+              </p>
+            </div>
+            <div className="scores">
+              <h3>Scores</h3>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">Assignments: </span>
+                {cohort.scores.assignments * 100}%
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">Projects: </span>
+                {cohort.scores.projects * 100}%
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">Assessments: </span>
+                {cohort.scores.assessments * 100}%
+              </p>
+            </div>
+            <div className="certifications">
+              <h3>Certifications</h3>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">Resume: </span>
+                {certifications.resume ? (
+                  <i className="fas fa-check"></i>
+                ) : (
+                  <i className="fas fa-times"></i>
+                )}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">LinkedIn: </span>
+                {certifications.linkedin ? (
+                  <i className="fas fa-check"></i>
+                ) : (
+                  <i className="fas fa-times"></i>
+                )}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">GitHub: </span>
+                {certifications.github ? (
+                  <i className="fas fa-check"></i>
+                ) : (
+                  <i className="fas fa-times"></i>
+                )}
+              </p>
+              <p>
+                {" "}
+                <span className="style__EachStudent__green">
+                  Mock Interview:{" "}
+                </span>
+                {certifications.mockInterview ? (
+                  <i className="fas fa-check"></i>
+                ) : (
+                  <i className="fas fa-times"></i>
+                )}
+              </p>
+            </div>
+
+            <aside className="notes">
+              <h2 className="notes__title">1-on-1 Notes</h2>
+              <form onSubmit={handleSubmit} className="notes__form">
+                <label htmlFor="commenter-name">
+                  {" "}
+                  Commenter Name : {"  "}
+                  <input
+                    type="text"
+                    id="commenter-name"
+                    name="commenter-name"
+                    autoFocus
+                    placeholder="Your Name..."
+                    value={commenterName}
+                    onChange={handleNameChange}
+                  />
+                </label>
+                <br />
+                <label className="align__label" htmlFor="comment">
+                  {" "}
+                  Comment : {"  "}
+                  <input
+                    type="text"
+                    id="comment"
+                    name="comment"
+                    value={studentComment}
+                    onChange={handleCommentChange}
+                    placeholder="Your Comment..."
+                  />
+                </label>
+                <br />
+                <input
+                  type="submit"
+                  className="button__addNote"
+                  value="Add Note"
+                />
+              </form>
+              <ul>
+                {notes.map((note, index) => (
+                  <li key={index}>
+                    <strong>{note.commenter} </strong> says, "{note.comment}"
+                  </li>
+                ))}
+              </ul>
+            </aside>
           </div>
-          <div className="scores">
-            <h3>Scores</h3>
-            <p> <span className="style__EachStudent__green">Assignments: </span>{cohort.scores.assignments * 100}%</p>
-            <p> <span className="style__EachStudent__green">Projects: </span>{cohort.scores.projects * 100}%</p>
-            <p> <span className="style__EachStudent__green">Assessments: </span>{cohort.scores.assessments * 100}%</p>
-          </div>
-          <div className="certifications">
-            <h3>Certifications</h3>
-            <p> <span className="style__EachStudent__green">Resume: </span>{certifications.resume ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
-            <p> <span className="style__EachStudent__green">LinkedIn: </span>{certifications.linkedin ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
-            <p> <span className="style__EachStudent__green">GitHub: </span>{certifications.github ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
-            <p> <span className="style__EachStudent__green">Mock Interview: </span>{certifications.mockInterview ? <i className="fas fa-check"></i> : <i className="fas fa-times"></i>}</p>
-          </div>
-        
-        <aside className="notes">
-        <h2 className="notes__title">1-on-1 Notes</h2>
-        <form onSubmit={handleSubmit} className="notes__form">
-          <label htmlFor="commenter-name">
-            {" "}
-            Commenter Name : {"  "}
-            <input
-              type="text"
-              id="commenter-name"
-              name="commenter-name"
-              autoFocus
-              placeholder="Your Name..."
-              value={commenterName}
-              onChange={handleNameChange}
-            />
-          </label>
-          <br />
-          <label className="align__label" htmlFor="comment">
-            {" "}
-            Comment : {"  "}
-            <input
-              type="text"
-              id="comment"
-              name="comment"
-              value={studentComment}
-              onChange={handleCommentChange}
-              placeholder="Your Comment..."
-            />
-          </label>
-          <br />
-          <input type="submit" className="button__addNote" value="Add Note" />
-        </form>
-        <ul>
-          {notes.map((note, index) => (
-            <li key={index}>
-              <strong>{note.commenter} </strong> says, "{note.comment}"
-            </li>
-          ))}
-        </ul>
-      </aside>
-      </div>
         )}
       </main>
     </div>

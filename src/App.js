@@ -49,8 +49,6 @@ function App() {
         <Student
           student={student}
           key={student.id}
-          // showDetails={showDetails}
-          // toggleDetails={toggleDetails}
           notes={studentNotes} // pass the notes for the student
           setNotes={(newNotes) => {
             // update the notes for the student in the data array
