@@ -91,7 +91,7 @@ function App() {
         <Header />
       </div>
       <aside className="cohort__container">
-        <h2>Choose a Class by Start Date</h2>
+        <h2 className="cohort__title">Choose a Class by Start Date</h2>
         {cohortList}
       </aside>
       <main className="student__container">

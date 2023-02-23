@@ -3,32 +3,34 @@
   grid-template-rows: auto 1fr auto; /* sets the grid rows */
   grid-template-columns: 30% 70%; /* sets the grid columns */
   /* grid-gap: 10px;                /* adds a gap between the grid items */
-  border: 3px solid rgb(200, 255, 0);
 }
 
 .header {
   grid-row: 1; /* sets the header to the first row */
   grid-column: 1 / span 2; /* spans the header across two columns */
-  border: 3px solid red;
 }
 
 .cohort__container {
   grid-row: 2; /* sets the first column to the second row */
   grid-column: 1; /* sets the first column to the first column */
-  border: 3px solid purple;
   align-self: start;
   position: sticky; /* sets the side menu while navigating the students it always appears */
-  top: 20px;
+  top: 7px;
+  background-color: rgb(244,255,241);
 }
 
 .student__container {
   grid-row: 2; /* sets the second column to the second row */
   grid-column: 2; /* sets the second column to the second column */
-  border: 3px solid orange;
+  background-color: rgb(244,255,241);
 }
 
 .footer {
   grid-row: 3; /* sets the footer to the last row */
   grid-column: 1 / span 2; /* spans the footer across two columns */
-  border: 3px solid green;
+}
+
+.cohort__title{
+  margin-bottom: 15px;
+  margin-left:15px;
 }

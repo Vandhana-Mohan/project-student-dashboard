@@ -1,33 +1,31 @@
-
 .style__EachStudent {
   margin: 10px;
-  border: 2px solid rgb(106,146,113);
-  display:grid;
+  border: 2px solid rgb(117, 251, 76);
+  display: grid;
   grid-template-columns: 20% 70% 10%;
   margin-right: 10%;
 }
 
-.style__EachStudent img{
-  width:100%;
-  margin:20%;
+.style__EachStudent img {
+  width: 100%;
+  margin: 20%;
   padding: 10px;
 }
 
-.style__EachStudent__info{
-  margin-left:12%;
-  margin-top:5%;
-  padding:0;
+.style__EachStudent__info {
+  margin-left: 12%;
+  margin-top: 5%;
+  padding: 0;
   letter-spacing: 1px;
-  /* border: 2px solid red; */
 }
 
-.style__EachStudent__info a{
-  color: rgb(106,146,113);
+.style__EachStudent__info a {
+  color: rgb(106, 146, 113);
   font-size: 16px;
   font-weight: bold;
 }
 
-.style__EachStudent__info h2{
+.style__EachStudent__info h2 {
   font-weight: bold;
   font-size: 24px;
   margin: 0 0 23px;
@@ -39,11 +37,12 @@
   margin: 0;
 }
 
-.style__EachStudent__green{
-  color: rgb(106,146,113);
+.style__EachStudent__green {
+  color: rgb(106, 146, 113);
 }
 
-.style__EachStudent__info h2, .style__EachStudent__info h5 {
+.style__EachStudent__info h2,
+.style__EachStudent__info h5 {
   margin: 0 0 10px;
 }
 
@@ -51,7 +50,7 @@
   margin: 10px 0 30px;
 }
 
-.show__more{
+.show__more {
   width: 35%;
   margin: 10px;
   font-size: 20px;
@@ -76,14 +75,14 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin-left:68%;
-  margin-top:-9%;
-  width:48%;
+  margin-left: 68%;
+  margin-top: -9%;
+  width: 48%;
 }
 
 .student__status p {
   margin: 0;
-  margin-right:-60%;
+  margin-right: -60%;
   font-size: 22px;
 }
 
@@ -91,36 +90,44 @@
   margin-bottom: 8%;
 }
 
-
 .student-details {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 25px;
-  margin-left:-33%;
-  margin-top:-8%;
-
+  margin-left: -30%;
+  margin-top: -3%;
 }
 
-.student-details h3 {
-  margin-top: 15%;
-  margin-left:1%;
+.student-grades h3 {
+  margin-top: 1%;
+  margin-left: 1%;
 }
 
-.student-details p {
+.student-grades p {
   margin-bottom: 10%;
   margin-top: 10%;
 }
 
-.student-details .codewars {
-  grid-row: span 4;
+.student-grades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px solid green;
 }
 
-.student-details .certifications {
+.student-grades .codewars {
   grid-row: span 4;
+  margin-left: 0px;
 }
 
-.style__EachStudent__green{
-  color: rgb(106,146,113);
+.student-grades .certifications {
+  grid-row: span 4;
+  margin-left: 80px;
+}
+
+.student-grades .scores {
+  margin-left: 50px;
+}
+
+.style__EachStudent__green {
+  color: rgb(106, 146, 113);
 }
 
 .fa-check {
@@ -135,21 +142,22 @@
 
 .notes {
   border-top: 2px solid rgb(106, 146, 113);
-  padding-top: 6%;
-  padding-bottom: 3%;
-  margin-left: -30%;
-  margin-top: 1%;
+  padding-top: 2%;
+  padding-bottom: 0%;
+  margin-left: 0%;
+  margin-top: 0%;
 }
 
 .notes__title {
   letter-spacing: 1.2px;
   margin-bottom: 2%;
+  margin-left: 2px;
 }
 
 .notes__form {
   margin-left: 7%;
   letter-spacing: 1.2px;
-  margin-top:-8%;
+  margin-top: -8%;
 }
 
 .notes input[type="text"] {
@@ -157,7 +165,7 @@
   margin-bottom: 1%;
   font-size: 18px;
   margin-top: 3%;
-  padding:10px;
+  padding: 10px;
   border: 2px solid black;
 }
 
@@ -182,6 +190,16 @@
   color: whitesmoke;
 }
 
-.align__label{
-  margin-left:10%;
+.align__label {
+  margin-left: 10%;
+}
+
+.notes__list {
+  margin-bottom: 16px;
+  margin-top: 3px;
+  margin-left: 0px;
+}
+
+.notes__list li {
+  margin-bottom: 11px;
 }

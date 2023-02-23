@@ -1,6 +1,6 @@
 
 .style__header{
-    background-color: rgb(160, 52, 6);
+    background-color: rgb(56,126,126);
     padding:0.5%;
 }
 
@@ -8,6 +8,8 @@
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    color: rgb(255,255,255)
+    color: rgb(255,255,255);
+    letter-spacing: 1.3px;
+    font-family: 'Rubik', sans-serif;
 }
 
