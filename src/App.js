@@ -41,9 +41,7 @@ function App() {
     .filter((student) => cohort === "All Students" || student.cohort.cohortCode === cohort) // filter students based on selected cohort
     .map((student) => {
       // map over the data and create a list of students
-      if (student.cohort.cohortCode === cohort) {
-        count++; // increment count if the student is in the selected cohort
-      }
+      
       const studentNotes = student.notes || []; // get the notes for the student
       return (
         // Return a Student component for each student
@@ -99,7 +97,7 @@ function App() {
           {cohort === "All Students" ? "All Students" : `${cohort.slice(0, -4)} ${cohort.slice(-4)}`}
         </h2>
         <h4 className="style__totalStudents">
-          Total Students: {" "} {cohort === "All Students" ? totalStudents : count} {" "} {/* display count if a cohort is selected, otherwise display totalStudents */}
+          Total Students: {studentList.length} {/* display count if a cohort is selected, otherwise display totalStudents */}
         </h4>{" "}
         {studentList} {/* render the list of students */}
       </main>
